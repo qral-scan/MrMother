@@ -1,5 +1,5 @@
 
-![photo_2023-09-02 09 17 34](https://github.com/fresh-Blood/MrMother/assets/88098218/6f050098-e126-452e-aa32-ee015e3ca720)
+![dg4km5v-116743b2-545f-48ca-9523-2728547770e5](https://github.com/fresh-Blood/MrMother/assets/88098218/e1378aa4-e142-4478-992f-5e859dc71a64)
 
 # 🤖 MrMother 👧
 
