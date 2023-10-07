@@ -37,6 +37,9 @@ Launch if needed now, or wait for next pc start up, bot will be launched automat
 - Also bot'll notify if unresolved comments exist.
 - Just in case you are busy, bot'll also notify you if sent message with Celero neural network nice female voice.
 
-![Снимок экрана 2023-09-09 в 22 53 29](https://github.com/fresh-Blood/MrMother/assets/88098218/c13d3841-871f-4f15-a299-3812a7a579fa)
+**Enjoy!**
 
-### Enjoy!
+## ☕️🙈
+- **TON**: UQCQclFDQnQkHI4bJETisvn4QAZevjMWx5mjC3AErZaXvhlU
+- **USDT**: TSiRAGH2apuygsgYP7Q9mS48WN4gDS6D5o
+- **BTC**: 1HCZ7KsmVoiDrvPpnZ5jLQPp7mi7xWR7fi
