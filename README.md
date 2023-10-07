@@ -35,7 +35,7 @@ Launch if needed now, or wait for next pc start up, bot will be launched automat
 - The default settings in MrMother.py and Data.py assume one assignee, chosen in gitlab when merge request was created, and two reviewers written in description block like: @gitlab_nickName.
 - So if merge request is approved by less than three developers and is not in draft state, bot'll send info about such merge request to chat. 
 - Also bot'll notify if unresolved comments exist or if merge request is ready for merge 
-- Just in case you are busy, bot'll also notify you if sent message with Celero neural network nice female voice.
+- Just in case you are busy, bot'll also notify you with Celero neural network nice female voice.
 
 **Enjoy!**
 
