@@ -1,7 +1,7 @@
 
 ![dg4km5v-116743b2-545f-48ca-9523-2728547770e5](https://github.com/fresh-Blood/MrMother/assets/88098218/e1378aa4-e142-4478-992f-5e859dc71a64)
 
-# 💜 MrMother 👧
+# MrMother 💜
 
 MrMother is customizable, extendable gitlab telegram bot to remind if merge request is waiting for someones approval. 
 You should edit data.py for your personal team customization.
