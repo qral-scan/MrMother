@@ -37,6 +37,12 @@ Launch if needed now, or wait for next pc start up, bot will be launched automat
 - Also bot'll notify if unresolved comments exist or if merge request is ready for merge 
 - Just in case you are busy, bot'll also notify you with Celero neural network nice female voice.
 
+## Preview: 
+<img width="880" alt="m" src="https://github.com/fresh-Blood/MrMother/assets/88098218/668f5ce3-338b-4b4e-a1b5-ed33cd3a1266">
+
+![m1](https://github.com/fresh-Blood/MrMother/assets/88098218/3637658f-d2c4-461e-8450-c9de534645b5)
+
+
 **Enjoy!**
 
 ## ☕️🙈
