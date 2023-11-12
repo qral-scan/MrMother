@@ -104,7 +104,7 @@ async def send(message: types.Message, needNow: bool = None):
     time = timeTracker.get_current_time()
     log_message = f'  State: running\n  Server time: {time}'
 
-    await send_daily_notification(message, weekday, time)
+    # await send_daily_notification(message, weekday, time)
 
     if weekday in work_days and time in schedule or needNow:
         load_mr_data()
