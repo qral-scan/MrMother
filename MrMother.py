@@ -69,16 +69,23 @@ def load_mr_data():
         assignee = 'none' if mr['assignee'] is None else str((mr['assignee'])['username'])
         assignee_telegram_name = developers[assignee]
         web_url = str(mr['web_url'])
+
+        has_conflicts = mr['has_conflicts']
+        has_conflicts_msg = '\n🎪 Ветки конфликтуют' if has_conflicts else ''
+
         discussions_resolved = mr['blocking_discussions_resolved']
-        discussions_resolved_str = '' if discussions_resolved is True else "\n💥 Нашла замечания"
-        need_send_ready_to_merge_message = len(approved_developers) >= required_approves_count and discussions_resolved
-        ready_to_merge = f'\n🐢 Assignee: {assignee_telegram_name}, можно вливать 🚀' if need_send_ready_to_merge_message else ''
-        key = web_url + discussions_resolved_str + ready_to_merge
+        discussions_resolved_msg = '' if discussions_resolved is True else "\n💥 Нашла замечания"
+
+        need_send_ready_to_merge_msg = len(
+            approved_developers) >= required_approves_count and discussions_resolved and not has_conflicts
+        ready_to_merge_msg = f'\n🐢 Assignee: {assignee_telegram_name}, можно вливать 🚀' if need_send_ready_to_merge_msg else ''
+
+        key = web_url + discussions_resolved_msg + ready_to_merge_msg + has_conflicts_msg
         mr_data = {key: approved_developers}
         users_from_description = get_users_from_description(mr)
         to_telegram_names = get_dev_telegram_name(users_from_description)
 
-        if need_send_ready_to_merge_message:
+        if need_send_ready_to_merge_msg:
             to_telegram_names = []
         else:
             try:
