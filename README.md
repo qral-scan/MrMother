@@ -1,12 +1,13 @@
 
-![dg4km5v-116743b2-545f-48ca-9523-2728547770e5](https://github.com/fresh-Blood/MrMother/assets/88098218/e1378aa4-e142-4478-992f-5e859dc71a64)
+![fb0af8d760f7471785223e26522a4c19.jpeg](..%2Fbot%20pics%2Ffb0af8d760f7471785223e26522a4c19.jpeg)
 
 # MrMother 💜
 
-MrMother is customizable, extendable gitlab telegram bot to remind if merge request is waiting for someones approval. 
-You should edit data.py for your personal team customization.
+MrMother was created to avoid stress situations between developers, connected with code review time.
+It is an extendable repo (gitlab and github for now) telegram bot to remind if merge or pull request is waiting for someones approval. 
+You should edit data.py for quick start. Devs in it's messages are about to be arrested for fun or it'll notify like 'it's calm in the city'
 
-## Quick start 🏁
+## Quick start(gitlab's example) 🏁
 1) install Python :З
 2) get gitLab project number 
 3) get your bot personal token 
@@ -30,14 +31,13 @@ Launch if needed now, or wait for next pc start up, bot will be launched automat
 2) open directory with MrMother.py
 3) run MrMother.py 
 
-## How it works: 
-- MrMother was created to avoid stress situations between developers, connected with code review time. Some developers, unfortunately, are sleeping; but business wants speed.
-- The default settings in MrMother.py and Data.py assume one assignee, chosen in gitlab when merge request was created, and two reviewers written in description block like: @gitlab_nickName.
-- So if merge request is approved by less than three developers and is not in draft state, bot'll send info about such merge request to chat. 
-- Also bot'll notify if unresolved comments exist or if merge request is ready for merge 
+## Default settings & abilities:
+- The default settings assume one assignee, and two reviewers written in description block like: @repo_nickName.
+- If merge request is approved by less than three developers and is not in draft, bot'll send info about such merge request to chat. 
+- Also bot'll notify if unresolved comments exist, if merge request is ready for merge, if has conflicts 
 - Just in case you are busy, bot'll also notify you with Celero neural network nice female voice.
 
-## Commands 🫡
+## Commands
 - /study
 - /help
 - /start
