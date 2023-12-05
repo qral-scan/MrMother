@@ -1,5 +1,5 @@
 
-![fb0af8d760f7471785223e26522a4c19.jpeg](..%2Fbot%20pics%2Ffb0af8d760f7471785223e26522a4c19.jpeg)
+![fb0af8d760f7471785223e26522a4c19](https://github.com/11010001101001/MrMother/assets/88098218/ae592a64-7111-418b-891e-bafabfad80bb)
 
 # MrMother 💜
 
