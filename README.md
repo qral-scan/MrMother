@@ -3,9 +3,10 @@
 
 # MrMother 💜
 
-MrMother was created to avoid stress situations between developers, connected with code review time.
-It is an extendable repo (gitlab and github for now) telegram bot to remind if merge or pull request is waiting for someones approval. 
-You should edit data.py for quick start. Devs in it's messages are about to be arrested for fun or it'll notify like 'it's calm in the city'
+MrMother was created to avoid stress situations between developers because of code review speed.
+It is an extendable repo (gitlab and github for now) telegram bot to remind if merge or pull requests are waiting for someones approval. 
+You should edit data.py for quick start.
+Devs in it's messages are about to be arrested for fun or it'll notify like 'it's calm in the city' if all requests are approved
 
 ## Quick start(gitlab's example) 🏁
 1) install Python :З
@@ -33,7 +34,7 @@ Launch if needed now, or wait for next pc start up, bot will be launched automat
 
 ## Default settings & abilities:
 - The default settings assume one assignee, and two reviewers written in description block like: @repo_nickName.
-- If merge request is approved by less than three developers and is not in draft, bot'll send info about such merge request to chat. 
+- If merge request is approved by less than three developers and is not in draft, bot'll send message about such merge request to chat. 
 - Also bot'll notify if unresolved comments exist, if merge request is ready for merge, if has conflicts 
 - Just in case you are busy, bot'll also notify you with Celero neural network nice female voice.
 
