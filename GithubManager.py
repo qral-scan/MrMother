@@ -19,6 +19,8 @@ class GithubManager:
 
         for pr in prs:
             labels = pr['labels']
+            assignee = f'@{pr["assignee"]["login"]}' if pr["assignee"] else "no_assignee"
+            reviewers = self.get_reviewers(pr) if self.get_reviewers(pr) else ["no_reviewers"]
 
             is_draft = False
 
@@ -30,8 +32,8 @@ class GithubManager:
                 pr_data = {
                     'url': pr['url'],
                     'html_url': pr['html_url'],
-                    'assignee': f'@{pr["assignee"]["login"]}',
-                    'reviewers': self.get_reviewers(pr)
+                    'assignee': assignee,
+                    'reviewers': reviewers
                 }
                 not_drafts.append(pr_data)
 
@@ -86,7 +88,7 @@ class GithubManager:
             '🏋🏾', '🏂', '💆‍♂️', '🧟‍♂️', '🧛🏼‍♂️', '🧌', '🧙🏿‍♂️',
             '🥷🏿', '👨🏻‍💻', '👨‍💻', '🕵🏻‍♂️', '👮🏽‍♂️'
         ]
-        return random.choice(avatars)
+        return random.choice(avatars) if dev not in ['no_reviewers', 'no_assignee'] else '💥'
 
     def get_conflicts(self, url):
         # response = requests.get(url, headers=HEADERS).text
