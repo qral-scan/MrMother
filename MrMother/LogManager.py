@@ -1,9 +1,9 @@
 import asyncio
 import os
-from Config import delay_in_seconds
+from MrMother.Config import delay_in_seconds
 from pyfiglet import Figlet
 import psutil
-from PidTracer import PidTracer
+from MrMother.PidTracer import PidTracer
 
 
 class LogManager(PidTracer):

@@ -1,12 +1,18 @@
 # GITHUB configuration
-GIT_HUB_TOKEN = 'your token'
+GIT_HUB_TOKEN = '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'
 HEADERS = {'Authorization': f'Bearer {GIT_HUB_TOKEN}'}
-PRS_URL = 'https://api.github.com/repos/+project dir+/pulls'
+PRS_URL = 'https://api.github.com/repos/qral-scan/usb/pulls'
 
 # devs in format: {'github_nick_name': '@telegram_nick_name'}
 DEVELOPERS = {
     'no_reviewers': 'Не указаны reviewers, арест на 15 суток 👮🏻♥️',
-    'no_assignee': 'Не указан assignee, лишение прав 👮🏻♥️'
+    'no_assignee': 'Не указан assignee, лишение прав 👮🏻♥️',
+    '@KalininArtemVal': '@kalinin_artem_val',
+    '@Weysinaction' : '@Weysinaction',
+    '@RuslanMirosh' : '@r_miroshnichenko',
+    '@OsyaginMaxim' : '@m_osyagin',
+    '@MatveyBlackman' : '@Elrik_Shefa',
+    '@perlinleo' : '@lperlin'
 }
 
 # GITLAB configuration
@@ -35,17 +41,17 @@ sound_is_on = True
 # copy bot for testing
 api_copy_bot_token = 'api_copy_bot_token'
 # another bot for production
-api_mr_mother_bot_token = 'api_mr_mother_bot_token'
+api_mr_mother_bot_token = '6526138195:AAHf0fmswwE3ipP-IcFBhFKO8ITQ13wX3Tw'
 
-dev_copy_chat_id = -1111111111111
-dev_ios_internal_chat_id = -1111111111111
+dev_copy_chat_id = -1001683561519
+dev_ios_internal_chat_id = -1001683561519
 
 api_bot_token = api_copy_bot_token if debug_mode_is_on else api_mr_mother_bot_token
 dev_chat_id = dev_copy_chat_id if debug_mode_is_on else dev_ios_internal_chat_id
 
 schedule = {
     '10:00',
-    '13:00',
+    '12:05',
     '15:30',
     '17:30',
 }

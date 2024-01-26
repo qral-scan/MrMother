@@ -1,21 +1,20 @@
 import random
-from GitlabManager import GitlabManager
-from GithubManager import GithubManager
+
+from MrMother.GitlabManager import GitlabManager
+from MrMother.GithubManager import GithubManager
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.utils.exceptions import BotBlocked
 from aiogram.utils.exceptions import BadRequest
-from Config import *
-from LogManager import LogManager
-from SoundManager import SoundManager
-from Texts import *
-from TimeTracker import TimeTracker
+from MrMother.Config import *
+from MrMother.LogManager import LogManager
+from MrMother.Texts import *
+from MrMother.TimeTracker import TimeTracker
 
 # Global variables
 timeTracker = TimeTracker()
 bot = Bot(token=api_bot_token)
 dispatcher = Dispatcher(bot)
 log_manager = LogManager()
-sound_manager = SoundManager()
 bot_is_running = False
 bot_commands = {}
 repo_manager = GithubManager()
@@ -23,7 +22,6 @@ repo_manager = GithubManager()
 
 async def send_daily_notification(message, weekday, time):
     if weekday in daily_schedule.keys() and time == daily_schedule[weekday]:
-        sound_manager.notify(text='Пора на дейли')
         daily_notification = '🌚 Дейли'
         await bot.send_message(message.chat.id, daily_notification, disable_web_page_preview=True)
 
@@ -38,7 +36,6 @@ async def send(message: types.Message, needNow: bool = None):
     if weekday in work_days and time in schedule or needNow:
         chat_message = repo_manager.create_msg()
         found = chat_message != '👮🏻 Уровень преступности в норме, в городе спокойно 💅'
-        sound_manager.notify(found)
 
         if needNow:
             loading_gif_message_id = message.message_id + 1
@@ -54,6 +51,7 @@ async def send(message: types.Message, needNow: bool = None):
 # Security
 def security_decorator(reply_):
     async def check(message):
+        print(message.chat.id)
         if message.chat.id == dev_chat_id:
             await reply_(message)
         else:

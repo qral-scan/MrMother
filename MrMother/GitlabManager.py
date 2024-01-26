@@ -1,4 +1,4 @@
-from Config import *
+from MrMother.Config import *
 import requests
 import json
 
