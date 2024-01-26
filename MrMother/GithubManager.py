@@ -1,7 +1,7 @@
 import random
 import requests
 import json
-from Config import *
+from MrMother.Config import *
 
 
 class GithubManager:
