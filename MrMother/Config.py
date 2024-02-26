@@ -1,7 +1,7 @@
 # GITHUB configuration
-GIT_HUB_TOKEN = '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'
+GIT_HUB_TOKEN = 'token'
 HEADERS = {'Authorization': f'Bearer {GIT_HUB_TOKEN}'}
-PRS_URL = 'https://api.github.com/repos/qral-scan/usb/pulls'
+PRS_URL = 'https://api.github.com/repos/'
 
 # devs in format: {'github_nick_name': '@telegram_nick_name'}
 DEVELOPERS = {
@@ -41,10 +41,10 @@ sound_is_on = True
 # copy bot for testing
 api_copy_bot_token = 'api_copy_bot_token'
 # another bot for production
-api_mr_mother_bot_token = '6526138195:AAHf0fmswwE3ipP-IcFBhFKO8ITQ13wX3Tw'
+api_mr_mother_bot_token = ''
 
-dev_copy_chat_id = -1001683561519
-dev_ios_internal_chat_id = -1001683561519
+dev_copy_chat_id = 
+dev_ios_internal_chat_id = 
 
 api_bot_token = api_copy_bot_token if debug_mode_is_on else api_mr_mother_bot_token
 dev_chat_id = dev_copy_chat_id if debug_mode_is_on else dev_ios_internal_chat_id
