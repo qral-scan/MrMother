@@ -2,9 +2,9 @@ schedule:
   TIMEZONE: 'Europe/Moscow'
   check:
     time:
+      - '07:00'
       - '10:00'
-      - '13:00'
-      - '15:30'
+      - '12:30'
     every:
       - 'monday'
       - 'tuesday'
@@ -13,7 +13,7 @@ schedule:
       - 'friday'
   daily:
     time:
-      - '16:00'
+      - '13:00'
     every:
       - 'monday'
       - 'tuesday'
