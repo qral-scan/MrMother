@@ -27,8 +27,9 @@ class merge_request_usecase:
         if err != None:
             return err, []
         for pr in prs:
-            if any(label.name == "draft" for label in pr.labels):
-                continue
+           if any(label.name == "draft" for label in pr.labels):
+               prs.remove(pr)
+        for pr in prs:
             reviewers = []
             gh_nicknames = self._find_occurrences(
                 body=pr.body, string_list=developers)

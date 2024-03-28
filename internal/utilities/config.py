@@ -21,11 +21,14 @@ class Config:
         return config
 
     def get(self, key):
-        return os.environ[f"mrmother_{key}"]
+        try:
+            return os.environ[f"{key}"]
+        except KeyError:
+            logging.log(level=logging.ERROR, msg=f'Cant find {key}')
 
     def set_env_variables(self, items, prefix=""):
         for key, value in items.items():
             if type(value) == dict:
-                self.set_env_variables(value, prefix=f"{prefix}_{key}")
+                self.set_env_variables(value, prefix=f"{prefix}{key}")
             else:
-                os.environ[f"mrmother{prefix}_{key}"] = str(value)
+                os.environ[f"{prefix}_{key}"] = str(value)
