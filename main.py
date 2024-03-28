@@ -64,7 +64,7 @@ def read_config(filename):
 
 
 async def daily_alert_async():
-    chat_id = Config().get("developer_chat_id")
+    chat_id = Config().get("telegram_group_chat_id")
     await bot.send_message(chat_id, "Дейли")
 
 
@@ -73,7 +73,7 @@ def daily_alert():
 
 
 async def check_alert_async():
-    chat_id = Config().get("developer_chat_id")
+    chat_id = Config().get("telegram_group_chat_id")
     merge_request_handler = merge_request_delivery(
         usecase=merge_request_usecase(
             mr_repo=merge_request_repository(), dev_repo=developer_repository()
