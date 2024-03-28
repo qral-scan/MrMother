@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional
-from marshmallow import Schema, fields, validate, post_load
+from marshmallow import Schema, ValidationError, fields, validate, post_load
 
 
 @dataclass
@@ -212,6 +212,60 @@ class RequestedReviewersResponseSchema(Schema):
     @post_load
     def make_requested_reviewers_response(self, data, **kwargs):
         return RequestedReviewersResponse(**data)
-
-    users = fields.Nested(UserSchema, many=True, allow_none=True)
+    
+    users = fields.List(fields.Nested(UserSchema), allow_none=True)
     teams = fields.List(fields.Dict(), allow_none=True)
+
+    @post_load
+    def make_requested_reviewers_response(self, data, **kwargs):
+        users = data.get("users", [])
+        teams = data.get("teams", [])
+        result = RequestedReviewersResponse(users=users, teams=teams)
+        return result
+
+@dataclass
+class Links:
+    html: str
+    pull_request: str
+
+@dataclass
+class PullRequestReview:
+    id: int
+    node_id: str
+    user: User
+    body: str
+    state: str
+    html_url: str
+    pull_request_url: str
+    author_association: str
+    _links: Links
+    submitted_at: str
+    commit_id: str
+
+class LinkItemSchema(Schema):
+    href = fields.URL(required=True)
+
+class LinksSchema(Schema):
+    html = fields.Nested(LinkItemSchema, allow_none=True)
+    pull_request = fields.Nested(LinkItemSchema, allow_none=True)
+
+    @post_load
+    def make_links(self, data, **kwargs):
+        return Links(**data)
+    
+class PullRequestReviewSchema(Schema):
+    id = fields.Integer(allow_none=True)
+    node_id = fields.String(allow_none=True)
+    user = fields.Nested(UserSchema, allow_none=True)
+    body = fields.String(allow_none=True)
+    state = fields.String(allow_none=True)
+    html_url = fields.String(allow_none=True)
+    pull_request_url = fields.String(allow_none=True)
+    author_association = fields.String(allow_none=True)
+    _links = fields.Nested(LinksSchema, allow_none=True)
+    submitted_at = fields.DateTime(allow_none=True)
+    commit_id = fields.String(allow_none=True)
+
+    @post_load
+    def make_pull_request_review(self, data, **kwargs):
+        return PullRequestReview(**data)

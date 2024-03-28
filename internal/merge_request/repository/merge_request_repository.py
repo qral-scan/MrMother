@@ -2,7 +2,7 @@
 
 import json
 import requests
-from internal.domain.merge_request import PullRequestSchema, PullRequest, RequestedReviewersResponse, RequestedReviewersResponseSchema, User, UserSchema
+from internal.domain.merge_request import PullRequestReviewSchema, PullRequestSchema, PullRequest, RequestedReviewersResponse, RequestedReviewersResponseSchema, User, UserSchema
 from marshmallow import ValidationError
 from typing import List, Tuple
 from internal.utilities.config import Config
@@ -12,17 +12,24 @@ class merge_request_repository:
     def __init__(self) -> None:
         pass
 
-    def get_merge_request_reviews(self, pull_request_number):
+    def get_merge_request_requested_reviewers(self, pull_request_number) -> Tuple[Exception, List[RequestedReviewersResponse]]:
         url = f"https://api.github.com/repos/qral-scan/usb/pulls/{pull_request_number}/requested_reviewers"
-        response = requests.get(url, headers={'Authorization': f'Bearer {Config().get('github_token')}'})
+        response = requests.get(url, headers={'Authorization': f'Bearer {Config().get('github_token')}'}).text
         try:
-            result = RequestedReviewersResponseSchema().load(response)
-            return result
+            result = RequestedReviewersResponseSchema().loads(response, many=isinstance(response, list))
+            return None, result
         except Exception as e:
             return e, None
         return
 
-    def get_merge_request_requested_reviewers(self, pull_request_number):
+    def get_merge_request_reviews(self, pull_request_number) -> Tuple[Exception, List[PullRequestReviewSchema]]:
+        url = f"https://api.github.com/repos/qral-scan/usb/pulls/{pull_request_number}/reviews"
+        response = requests.get(url, headers={'Authorization': f'Bearer {Config().get('github_token')}'}).text
+        try:
+            result = PullRequestReviewSchema().loads(response, many=True)
+            return None, result
+        except Exception as e:
+            return e, None
         return
 
     def get_merge_status(self, pull_request_number) -> bool:
