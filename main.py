@@ -50,6 +50,8 @@ async def reply(message: types.Message):
             pass
         else:
             await message.answer(f"Command {message.text} wasnt found")
+    except AttributeError as e:
+        pass
     except Exception as e:
         logging.log(level=logging.ERROR, msg=f"Error {type(e)} occured")
         await message.answer("Error occured")
