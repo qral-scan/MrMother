@@ -1,0 +1,37 @@
+schedule:
+  TIMEZONE: 'Europe/Moscow'
+  check:
+    time:
+      - '10:00'
+      - '13:00'
+      - '15:30'
+    every:
+      - 'monday'
+      - 'tuesday'
+      - 'wednesday'
+      - 'thursday'
+      - 'friday'
+  daily:
+    time:
+      - '16:00'
+    every:
+      - 'monday'
+      - 'tuesday'
+      - 'wednesday'
+      - 'thursday'
+github:
+  owner: 'qral-scan'
+  repo: 'usb'
+developer:
+  chat_id: ''
+  developers:
+      - '@KalininArtemVal': '@kalinin_artem_val'
+      - '@Weysinaction' : '@Weysinaction'
+      - '@RuslanMirosh' : '@r_miroshnichenko'
+      - '@OsyaginMaxim' : '@m_osyagin'
+      - '@MatveyBlackman' : '@Elrik_Shefa'
+      - '@perlinleo' : '@lperlin'
+      - '@ASobolevUral': '@tema_sb'
+      - '@ipv02': '@igorrpv'
+      - '@igorbelov1988': '@ig0rbel'
+

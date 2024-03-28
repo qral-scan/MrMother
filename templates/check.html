@@ -1,0 +1,21 @@
+{% for pr in prs %}
+🔄<a href='{{ pr.html_url }}'>{{ pr.title }}</a> 
+    {% if pr.assignee -%}
+    Assignee {{ pr.assignee.login }}
+    {%- else -%}
+    💥 Не указан assignee
+    {%- endif %}
+    {%- set index = loop.index0 -%}
+    {%- if index < rd | length -%}
+    {%- if rd[index] -%}
+    {% for reviewer in rd[index] %}
+    {{ reviewer }}
+    {%- endfor -%}
+    {%- else %}
+    💥 Не указаны reviewers
+    {% endif %}
+    {%- endif -%}
+    {%- if pr.locked -%}
+    PR заблокирован
+    {%- endif %}
+{% endfor %}
